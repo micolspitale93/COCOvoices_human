@@ -363,8 +363,10 @@
             div_video.appendChild(video);
             video.load();
             video.play();
-            div_video.style.display = "block";
-            div_live.style.display = "none";
+            video.onplay = function() {
+                div_video.style.display = "block";
+                div_live.style.display = "none";
+            }
             video.addEventListener("ended", test, false);
 
             function test(e) {
