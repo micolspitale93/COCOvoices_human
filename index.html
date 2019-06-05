@@ -361,16 +361,10 @@
             video.setAttribute("width", "100%");
             video.controls = false;
             div_video.appendChild(video);
+            video.load();
             video.play();
-            video.addEventListener("started", start, false);
-
-            function start(e) {
-
-                div_video.style.display = "block";
-                div_live.style.display = "none";
-            }
-
-
+            div_video.style.display = "block";
+            div_live.style.display = "none";
             video.addEventListener("ended", test, false);
 
             function test(e) {
