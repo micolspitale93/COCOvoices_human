@@ -363,7 +363,6 @@
             div_video.appendChild(video);
             video.play();
             div_video.style.display = "block";
-            div_live.fadeOut();
 
             div_live.style.display = "none";
 
@@ -371,7 +370,6 @@
 
             function test(e) {
                 div_video.style.display = "none";
-                div_video.fadeOut();
                 div_live.style.display = "block";
                 div_video.removeChild(video);
             }
