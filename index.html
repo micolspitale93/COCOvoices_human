@@ -362,11 +362,14 @@
             video.controls = false;
             div_video.appendChild(video);
             video.load();
-            video.play();
-            video.onplay = function() {
+
+            video.addEventListener('loadeddata', function() {
                 div_video.style.display = "block";
                 div_live.style.display = "none";
-            }
+                video.play();
+
+            }, false);
+
             video.addEventListener("ended", test, false);
 
             function test(e) {
