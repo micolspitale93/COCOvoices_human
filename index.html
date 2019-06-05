@@ -105,7 +105,7 @@
             opt.value = recorded_video_story[i];
             send_video.appendChild(opt);
         }
-        
+
         for (i = 0; i < num_rec1; i++) {
             var opt = document.createElement("option");
             opt.appendChild(document.createTextNode(recorded_audio1[i]))
@@ -134,19 +134,19 @@
             console.log(value_video);
             sendMessage(value_video);
         };
-        
+
         button_send1.onclick = function() {
             var value_video = send_audio1.options[send_audio1.selectedIndex].value;
             console.log(value_video);
             sendMessage(value_video);
         };
-        
+
         button_send2.onclick = function() {
             var value_video = send_audio2.options[send_audio2.selectedIndex].value;
             console.log(value_video);
             sendMessage(value_video);
         };
-        
+
         button_send3.onclick = function() {
             var value_video = send_audio3.options[send_audio3.selectedIndex].value;
             console.log(value_video);
@@ -362,9 +362,13 @@
             video.controls = false;
             div_video.appendChild(video);
             video.play();
-            div_video.style.display = "block";
+            video.addEventListener("started", start, false);
 
-            div_live.style.display = "none";
+            function start(e) {
+                div_live.style.display = "none";
+                div_video.style.display = "block";
+            }
+
 
             video.addEventListener("ended", test, false);
 
