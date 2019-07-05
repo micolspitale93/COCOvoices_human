@@ -73,7 +73,7 @@
         <button id="send_value_rec3">Send</button>
 
         <!-- local/remote videos container -->
-        <div id="videos-container"></div>
+        <div id="videos-container" style="display:none;"></div>
 
 
 
@@ -99,6 +99,7 @@
         var num_rec1 = recorded_audio1.length;
         var num_rec2 = recorded_audio2.length;
         var num_rec3 = recorded_audio3.length;
+        
         for (i = 0; i < num_story; i++) {
             var opt = document.createElement("option");
             opt.appendChild(document.createTextNode(recorded_video_story[i]))
